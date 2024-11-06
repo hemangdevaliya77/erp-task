@@ -1,0 +1,27 @@
+/* General Styles for the header */
+.header ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Add space between links */
+  }
+  
+  .header li {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease; /* Smooth transition for hover */
+  }
+  
+  /* Add a border-bottom to the active link */
+  .header li.active {
+    border-bottom: 2px solid #000000; /* Change color as needed */
+    font-weight: 800;
+}
+  
+  /* Optional: Add a hover effect for non-active links */
+  .header li:hover {
+    color: #007bff;
+  }
+  
