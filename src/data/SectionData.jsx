@@ -12,7 +12,7 @@ const sectionData = [
             { name: 'User1', avatar: 'https://randomuser.me/api/portraits/men/1.jpg' },
             { name: 'User2', avatar: 'https://randomuser.me/api/portraits/women/1.jpg' },
           ],
-          comments:  [  { name: 'User4', avatar: 'https://randomuser.me/api/portraits/women/2.jpg' }],
+          comments:  [  { name: 'User4', avatar: 'https://randomuser.me/api/portraits/women/2.jpg', text: 'Looking forward to the meeting.'  }],
           tags: ['Attention', 'Bills'],
         },
         {
@@ -23,11 +23,12 @@ const sectionData = [
           organization: "kate's Dog",
           assignees: [
             { name: 'User1', avatar: 'https://randomuser.me/api/portraits/men/1.jpg' },
-            { name: 'User2', avatar: 'https://randomuser.me/api/portraits/women/1.jpg' },
+            { name: 'User2', avatar: 'https://randomuser.me/api/portraits/men/2.jpg' },
           ],
-          comments:  [  { name: 'User4', avatar: 'https://randomuser.me/api/portraits/women/2.jpg' }],
+          comments:  [  { name: 'User4', avatar: 'https://randomuser.me/api/portraits/women/2.jpg' ,  text: 'Ready to start the project!' }],
           tags: ['Bills'],
         },
+        
       ],
       tags: ['All', 'Attention', 'Bills', 'Confirmed'],
     },
@@ -43,19 +44,19 @@ const sectionData = [
           assignees: [
             { name: 'User3', avatar: 'https://randomuser.me/api/portraits/men/2.jpg' },
           ],
-          comments: [  { name: 'User4', avatar: 'https://randomuser.me/api/portraits/women/2.jpg' }],
+          comments: [  { name: 'User4', avatar: 'https://randomuser.me/api/portraits/women/2.jpg', text: 'The designs look great, let’s finalize it.'  }],
           tags: ['Confirmed', 'Bills'],
         },
         {
           id: 4,
           task: 'Client Call',
-          status: false,
+          status: true,
           dueDate: '22/07',
           organization: "Design Co.",
           assignees: [
             { name: 'User4', avatar: 'https://randomuser.me/api/portraits/women/2.jpg' },
           ],
-          comments: [  { name: 'User4', avatar: 'https://randomuser.me/api/portraits/women/2.jpg' }],
+          comments: [  { name: 'User4', avatar: 'https://randomuser.me/api/portraits/women/2.jpg' ,   text: 'Reminder for the call tomorrow.' }],
           tags: ['Attention'],
         },
       ],

@@ -1,9 +1,11 @@
 .sidebar {
     display: flex;
     flex-direction: column;  /* Stack items vertically */
-    height: 100vh;           /* Make sidebar take full height of the viewport */
+    min-height: 100vh;           /* Make sidebar take full height of the viewport */
     padding: 20px;
+    width: 70px;
     background-color: rgb(242, 242, 242);
+ 
   }
   
   .sidebar > * {

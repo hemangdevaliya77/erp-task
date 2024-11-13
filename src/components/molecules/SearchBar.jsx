@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
+
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
-import { Button } from '@mui/material';
+import CustomButton from '../atoms/Button/CustomButton';
+import CustomInput from '../atoms/Input/CustomInput';
+import { fontSize, textAlign } from '@mui/system';
 
 
 function SearchBar() {
@@ -19,23 +20,36 @@ function SearchBar() {
     console.log('Search query:', searchQuery);
   };
 
+
+  function taskadd(){
+    console.log('task added');
+  }
   return (
     <>
     
-    <FormControl sx={{ m: 0, width: '30ch' }} variant="outlined">
-   <TextField
-           id="outlined-start-adornment"
-          sx={{ m: 1, width: '25ch','& .MuiInputBase-root': { height: '40px' } }}
-          slotProps={{
-            input: {
-              startAdornment: <InputAdornment position="start">    <SearchIcon /></InputAdornment>,
-            },
-          }}
-          placeholder='search task'
-        />
-     </FormControl>
-        <Button variant='contained'   sx={{ m: 1, width: '20ch','& .MuiInputBase-root': { height: '15px' },fontSize:'12px' }}>Add Section</Button>
-    </>
+  
+<div style={{display:'flex'}}>
+  
+        <CustomInput id="outlined-start-adornment" 
+         sx={{ m: 1, width: '25ch','& .MuiInputBase-root': { height: '40px' }}}
+         slotprops={{
+          input: {
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          },
+        }}
+         placeholder='search task'
+         onChange={handleChange}
+         />
+
+     
+    <CustomButton label='Add Section' onClick={taskadd} color='primary' sx={{m: 1,height:'40px', width: '108px',fontSize:'11px'}}/>
+   
+</div>
+       </>
   );
 }
 

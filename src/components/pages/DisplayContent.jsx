@@ -11,12 +11,12 @@ const DisplayContent = ({ activeLink }) => {
       case 'lists':
         return <Sections />;  // Render 'Sections' when activeLink is 'lists'
       default:
-        return <All />;  // Default to 'All' if no valid activeLink is found
+        return <All />;  
     }
   };
 
   return (
-    <div className="content" style={{ marginTop: '20px', padding: '20px 0' }}>
+    <div className="content" style={{padding: '10px 0' }}>
       {renderContent()}  {/* Render the correct component */}
     </div>
   );

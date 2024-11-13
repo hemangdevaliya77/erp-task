@@ -1,0 +1,94 @@
+/* taskdetails.css */
+.task-details-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  position: relative;
+}
+
+.task-details, .upcoming-tasks {
+  background-color: #f6f7fa;
+  border-radius: 20px;
+  padding: 10px;
+  height: auto;
+}
+
+.task-details {
+  height: 330px;
+}
+
+.upcoming-tasks {
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+}
+
+.calender-container {
+  margin-top: 20px;  
+}
+
+.upcoming-container {
+  min-height: 70px;
+  margin-left: 20px;
+  height: 330px;
+  background-color: #f6f7fa;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  width: 77%;
+  margin-right: 5px;
+  margin-bottom: 20px;
+}
+
+.task-container-main {
+  display: flex;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+/* Media query for devices with max-width of 1460px */
+@media screen and (max-width: 1460px) {
+  .task-details-container {
+      grid-template-columns: 1fr; 
+  }
+  .task-container-main {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      margin-left: 10px;
+      width: 100%;
+  }
+  .upcoming-container {
+      margin-top: 20px;
+      width: 100%;
+  }
+}
+
+/* Media query for devices with max-width of 1800px */
+@media screen and (max-width: 1800px) {
+  .task-details-container {
+      grid-template-columns: 1fr;  
+  }
+  .task-container-main {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      margin-left: 10px;
+      width: 100%;
+  }
+  .upcoming-container {
+      margin-top: 20px;
+      width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px ),screen and (max-width:918px),screen and (max-width:853px)  {
+
+  .upcoming-container {
+    margin-left: 5px;
+    
+}
+
+}

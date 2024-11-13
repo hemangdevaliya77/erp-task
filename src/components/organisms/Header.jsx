@@ -1,31 +1,52 @@
-import React,{useState} from 'react'
-import '../styles/header.css'
+import React, { useState } from 'react';
+import { Tab, Tabs, Box } from '@mui/material';
+import CustomIcon from '../atoms/Icon/CustomIcon';
+import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
+import ViewListIcon from '@mui/icons-material/ViewList';
 
-function Header() {
-    const [activeLink, setActiveLink] = useState('sections');
-    const handleLinkClick = (link) => {
-        setActiveLink(link);
-      };
+function Header({ links = [], onLinkClick }) {
+  const [activeLink, setActiveLink] = useState(links[0]?.name || '');
+
+  const handleTabChange = (event, newValue) => {
+    setActiveLink(newValue);
+    if (onLinkClick) {
+      onLinkClick(newValue); // Optional callback for parent component
+    }
+  };
+
   return (
-    <>
-    <div className='header'>
-      <ul>
-        <li
-          className={activeLink === 'sections' ? 'active' : ''}
-          onClick={() => handleLinkClick('sections')}
-        >
-          Sections
-        </li>
-        <li
-          className={activeLink === 'lists' ? 'active' : ''}
-          onClick={() => handleLinkClick('lists')}
-        >
-          Lists
-        </li>
-      </ul>
-    </div>
-  </>
-  )
+    <Box >
+      <Tabs
+        value={activeLink}
+        onChange={handleTabChange}
+        aria-label="header navigation"
+        indicatorColor="primary"
+        textColor="primary"
+        centered
+      >
+        {links.map((link) => (
+          <Tab
+            key={link.name}
+            label={
+              <div >
+                {link.icon && (
+                  <CustomIcon
+                    IconComponent={link.icon}
+                    color="primary"
+                    size="small"
+                    
+                  />
+                )}
+                {link.label}
+              </div>
+            }
+            value={link.name}
+            sx={{ textTransform: 'none', fontWeight: activeLink === link.name ? 'bold' : 'normal' }}
+          />
+        ))}
+      </Tabs>
+    </Box>
+  );
 }
 
-export default Header
+export default Header;
